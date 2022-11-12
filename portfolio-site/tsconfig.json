@@ -8,6 +8,9 @@
     "strict": true,
     "noImplicitOverride": true,
     "paths": {
+      "admin": [
+        "dist/admin"
+      ],
       "home": [
         "dist/home"
       ]
