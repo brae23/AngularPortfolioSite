@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { AdminComponent } from './admin.component';
+import { AdminComponent } from './components/admin.component';
 
 
 

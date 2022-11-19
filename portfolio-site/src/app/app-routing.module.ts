@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from 'src/libs/admin/src/lib/components/admin.component';
-import { HomeComponent } from 'src/libs/home/src/lib/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: '', loadChildren: () => import('../libs/shell/src/lib/shell.module').then(m => m.ShellModule)},
+  { path: 'admin', loadChildren: () => import('../libs/admin/src/lib/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({
