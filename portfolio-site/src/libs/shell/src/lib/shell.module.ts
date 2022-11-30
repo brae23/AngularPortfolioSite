@@ -7,9 +7,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+
+type PathMatch = "full" | "prefix" | undefined;
 
 const routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' as PathMatch },
   { path: 'home', component: NavShellComponent, children: [{ path: '', component: HomeComponent}]},
   { path: 'about', component: NavShellComponent, children: [{ path: '', component: AboutComponent}] },
   { path: 'contact', component: NavShellComponent, children: [{ path: '', component: ContactComponent}] }

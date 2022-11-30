@@ -1,8 +1,14 @@
 <mat-drawer-container class="h-full">
-    <mat-drawer mode="side" opened class="w-36">
-        <a class="cursor-pointer" (click)="onClick('home')">Home</a>
-        <a class="cursor-pointer" (click)="onClick('contact')">Contact</a>
-        <a class="cursor-pointer" (click)="onClick('about')">About</a>
+    <mat-drawer mode="side" opened class="w-36 flex flex-row items-center place-content-center">
+        <div class="flex flex-col items-center">
+            <a class="cursor-pointer" (click)="onClick('home')">Home</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <a class="cursor-pointer" (click)="onClick('contact')">Contact</a>
+        </div>
+        <div class="flex flex-col items-center">
+            <a class="cursor-pointer" (click)="onClick('about')">About</a>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
         <router-outlet></router-outlet>
