@@ -1,16 +1,18 @@
-<mat-drawer-container class="h-full">
-    <mat-drawer mode="side" opened class="w-36 flex flex-row items-center place-content-center">
-        <div class="flex flex-col items-center">
-            <a class="cursor-pointer" (click)="onClick('home')">Home</a>
+<mat-sidenav-container class="h-full">
+    <mat-sidenav mode="side" opened class="flex flex-row items-center justify-center w-36" role="navigation">
+        <div class="flex flex-col items-center justify-center h-full w-36">
+            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('home')">
+                Home
+            </div>
+            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('about')">
+                About
+            </div>
+            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('contact')">
+                Contact
+            </div>
         </div>
-        <div class="flex flex-col items-center">
-            <a class="cursor-pointer" (click)="onClick('contact')">Contact</a>
-        </div>
-        <div class="flex flex-col items-center">
-            <a class="cursor-pointer" (click)="onClick('about')">About</a>
-        </div>
-    </mat-drawer>
-    <mat-drawer-content>
+    </mat-sidenav>
+    <mat-sidenav-content role="main">
         <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container>
+    </mat-sidenav-content>
+</mat-sidenav-container>
