@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule } from '@angular/router';
+import { TopBarComponent } from './top-bar/top-bar.component';
 
 type PathMatch = "full" | "prefix" | undefined;
 
@@ -23,6 +24,7 @@ const routes = [
     NavShellComponent,
     AboutComponent,
     ContactComponent,
+    TopBarComponent,
   ],
   imports: [
     MatSidenavModule,
