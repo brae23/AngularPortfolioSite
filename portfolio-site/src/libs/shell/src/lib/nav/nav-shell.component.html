@@ -1,19 +1,23 @@
-<top-bar></top-bar>
-<mat-sidenav-container class="h-full">
-    <mat-sidenav mode="side" opened class="flex flex-row items-center justify-center w-36" role="navigation">
-        <div class="flex flex-col items-center justify-center h-full w-36">
-            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('home')">
-                Home
+<div class="h-full flex flex-col">
+    <top-bar></top-bar>
+    <mat-sidenav-container class="h-full">
+        <mat-sidenav mode="side" opened class="flex flex-row items-center justify-center w-40" role="navigation">
+            <div class="flex flex-col items-center justify-center h-full w-full">
+                <div class="flex flex-col h-72 w-full">
+                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-t border-white" (click)="onClick('home')">
+                        <p class="pt-3 text-xl">Home</p>
+                    </div>
+                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-t border-b border-white" (click)="onClick('projects')">
+                        <p class="pt-3 text-xl">Projects</p>
+                    </div>
+                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-b border-white" (click)="onClick('about')">
+                        <p class="pt-3 text-xl">About</p>
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('about')">
-                About
-            </div>
-            <div class="flex flex-col items-center h-12 w-36 cursor-pointer" (click)="onClick('contact')">
-                Contact
-            </div>
+        </mat-sidenav>
+        <div>
+            <router-outlet></router-outlet>
         </div>
-    </mat-sidenav>
-    <mat-sidenav-content role="main">
-        <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-sidenav-container>
+</div>

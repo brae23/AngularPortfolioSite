@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
 
@@ -15,7 +15,7 @@ const routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' as PathMatch },
   { path: 'home', component: NavShellComponent, children: [{ path: '', component: HomeComponent}]},
   { path: 'about', component: NavShellComponent, children: [{ path: '', component: AboutComponent}] },
-  { path: 'contact', component: NavShellComponent, children: [{ path: '', component: ContactComponent}] }
+  { path: 'projects', component: NavShellComponent, children: [{ path: '', component: ProjectsComponent}] }
 ]
 
 @NgModule({
@@ -23,7 +23,7 @@ const routes = [
     HomeComponent,
     NavShellComponent,
     AboutComponent,
-    ContactComponent,
+    ProjectsComponent,
     TopBarComponent,
   ],
   imports: [
