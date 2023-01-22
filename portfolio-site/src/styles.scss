@@ -4,3 +4,19 @@
 @tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.nav-component {
+    display:flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 5rem; 
+    width: 100%; 
+    cursor: pointer;
+}
+
+.nav-component-text {
+    padding-top: 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}

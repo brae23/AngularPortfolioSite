@@ -2,16 +2,16 @@
     <top-bar></top-bar>
     <mat-sidenav-container class="h-full">
         <mat-sidenav mode="side" opened class="flex flex-row items-center justify-center w-40" role="navigation">
-            <div class="flex flex-col items-center justify-center h-full w-full">
+            <div class="flex flex-col items-center justify-center h-full w-full shadow-inner">
                 <div class="flex flex-col h-72 w-full">
-                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-t border-white" (click)="onClick('home')">
-                        <p class="pt-3 text-xl">Home</p>
+                    <div class="nav-component border-t border-white" (click)="onClick('home')">
+                        <p class="nav-component-text">Home</p>
                     </div>
-                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-t border-b border-white" (click)="onClick('projects')">
-                        <p class="pt-3 text-xl">Projects</p>
+                    <div class="nav-component border-t border-b border-white" (click)="onClick('projects')">
+                        <p class="nav-component-text">Projects</p>
                     </div>
-                    <div class="flex flex-col justify-center items-center h-20 w-full cursor-pointer border-b border-white" (click)="onClick('about')">
-                        <p class="pt-3 text-xl">About</p>
+                    <div class="nav-component border-b border-white" (click)="onClick('about')">
+                        <p class="nav-component-text">About</p>
                     </div>
                 </div>
             </div>
