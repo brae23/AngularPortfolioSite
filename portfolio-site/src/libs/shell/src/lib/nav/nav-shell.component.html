@@ -1,16 +1,16 @@
-<div class="h-full flex flex-col">
+<div class="h-full flex-col">
     <top-bar></top-bar>
     <mat-sidenav-container class="h-full">
-        <mat-sidenav mode="side" opened class="flex flex-row items-center justify-center w-40" role="navigation">
-            <div class="flex flex-col items-center justify-center h-full w-full shadow-inner">
-                <div class="flex flex-col h-72 w-full">
-                    <div class="nav-component border-t border-white" (click)="onClick('home')">
+        <mat-sidenav mode="side" opened class="mat-sidenav flex-row" role="navigation">
+            <div class="flex-col flex-center h-full w-full">
+                <div class="flex-col nav-component-container">
+                    <div class="nav-component" (click)="onClick('home')">
                         <p class="nav-component-text">Home</p>
                     </div>
-                    <div class="nav-component border-t border-b border-white" (click)="onClick('projects')">
+                    <div class="nav-component" (click)="onClick('projects')">
                         <p class="nav-component-text">Projects</p>
                     </div>
-                    <div class="nav-component border-b border-white" (click)="onClick('about')">
+                    <div class="nav-component" (click)="onClick('about')">
                         <p class="nav-component-text">About</p>
                     </div>
                 </div>

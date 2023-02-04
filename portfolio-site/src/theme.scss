@@ -114,8 +114,13 @@ $portfolio-app-dark-theme: mat.define-dark-theme(
   )    
 );
 
+$custom-typography: mat-typography-config(
+  $font-family: 'Trebuchet MS'
+);
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($portfolio-app-dark-theme);
+@include mat-core($custom-typography);
