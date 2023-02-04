@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'sass:map';
+@use './palette' as cp;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -51,7 +53,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .nav-component:hover {
-    box-shadow: 0 15px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.55), 0 -1px 10px rgba(0,0,0,0.55);
+    background-color: map.get(cp.$surface, 700);
     transition: box-shadow 0.15s ease-in-out;
 }
 
