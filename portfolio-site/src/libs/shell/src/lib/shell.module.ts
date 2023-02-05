@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { CommonModule } from '@angular/common';
 
 type PathMatch = "full" | "prefix" | undefined;
 
