@@ -4,6 +4,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+$linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
+
 .flex-col {
     display: flex;
     flex-direction: column;
@@ -76,7 +78,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.55);
     position: static;
     top: 0;
-    background-image: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
+    background-image: $linear-gradient;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -110,12 +112,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .home-title { 
-    background: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
+    background: $linear-gradient;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-size: 2.25rem;
     line-height: 2rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .home-text {
