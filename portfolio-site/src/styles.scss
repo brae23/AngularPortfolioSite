@@ -99,6 +99,12 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% { top: 200px }
+    100% { top: 0 }
 }
 
 .home-content {
