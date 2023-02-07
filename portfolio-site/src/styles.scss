@@ -37,10 +37,15 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     background-color: map.get(cp.$neutral, 900);
 }
 
+.sidenav-content {
+    height: 100%;
+}
+
 .mat-sidenav {
     background-color: map.get(cp.$neutral, 800);
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
     width: 11rem;
+    height: 100%;
 }
 
 .nav-component {
@@ -96,15 +101,16 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
 
 .home-container {
     display: flex;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: fadeIn 2s;
+    animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn {
-    0% { top: 200px }
-    100% { top: 0 }
+    0% { margin-top: 100px; opacity: 0 }
+    100% { margin-top: 0;  opacity: 1 }
 }
 
 .home-content {
@@ -167,5 +173,5 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid #1ac3da;
 }
