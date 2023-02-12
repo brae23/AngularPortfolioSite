@@ -1,3 +1,14 @@
-<div class="projects-container">
-    <p class="projects-content">Projects works!</p>
+<div class="no-scroll-container">
+    <div class="projects-container">
+        <div class="projects-title-container">
+            <div class="projects-title-box">
+                <p class="title">My Side Projects</p>
+            </div>
+        </div>
+        <div class="project-cards-container">
+            <project-card *ngFor="let card of projectCards" [title]="card.title"
+            [content]="card.content" [projectUrl]="card.projectUrl"
+            [asset]="card.asset"></project-card>
+        </div>
+    </div>
 </div>
