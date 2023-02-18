@@ -9,6 +9,5 @@ export class NavShellComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   
 }

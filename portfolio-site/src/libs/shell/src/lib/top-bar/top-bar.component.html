@@ -1,14 +1,24 @@
 <div class="top-bar">
-    <p class="top-bar-logo">&lt;/BR&gt;</p>
+    <div class="top-bar-logo-box" (click)="onClick('home')">
+        <!-- <div class="top-bar-logo">&lt;/BR&gt;</div> -->
+        <img src="..\..\..\..\..\assets\profile-pic.jpg" class="top-bar-profile-img" alt="Profile Picture">
+        <div class="top-bar-logo-text tb-text">Brendan Rae</div>
+    </div>
     <div class="nav-component-container">
-        <div class="nav-component" (click)="onClick('home')">
-            <p class="nav-component-text">Home</p>
+        <div class="nav-component-box" (click)="onClick('home')">
+            <div class="nav-component-text tb-text" [ngClass]="{'nav-component-selected': activatedRoute == 'home'}">Home</div>
+            <div class="nav-component-selected-underline" *ngIf="activatedRoute == 'home'"></div>
         </div>
-        <div class="nav-component" (click)="onClick('about')">
-            <p class="nav-component-text">About Me</p>
+        <div class="nav-component-box" (click)="onClick('about')">
+            <div class="nav-component-text tb-text" [ngClass]="{'nav-component-selected': activatedRoute == 'about'}">About Me</div>
+            <div class="nav-component-selected-underline" *ngIf="activatedRoute == 'about'"></div>
         </div>
-        <div class="nav-component" (click)="onClick('projects')">
-            <p class="nav-component-text">Projects</p>
+        <div class="nav-component-box" (click)="onClick('projects')">
+            <div class="nav-component-text tb-text" [ngClass]="{'nav-component-selected': activatedRoute == 'projects'}">Projects</div>
+            <div class="nav-component-selected-underline" *ngIf="activatedRoute == 'projects'"></div>
         </div>
+    </div>
+    <div class="contact-me-box">
+        <div class="contact-me-text tb-text">Contact Me</div>
     </div>
 </div>

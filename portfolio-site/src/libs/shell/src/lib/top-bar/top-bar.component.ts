@@ -6,13 +6,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './top-bar.component.html',
 })
 export class TopBarComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  activatedRoute: string;
+
+  constructor(private router: Router) { 
+    this.activatedRoute = router.url.toString().split('/')[1];
+  }
 
   ngOnInit(): void {
   }
 
   onClick(route: string) {
     this.router.navigateByUrl(`${route}`);
+    console.log(this.activatedRoute);
   }
 
 }
