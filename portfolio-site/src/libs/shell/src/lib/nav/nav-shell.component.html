@@ -1,23 +1,6 @@
 <div class="h-full flex-col">
-    <top-bar></top-bar>    
-    <mat-sidenav-container class="h-full sidenav-container">
-        <mat-sidenav mode="side" opened class="mat-sidenav flex-row" role="navigation">
-            <div class="flex-col flex-center h-full w-full">
-                <div class="flex-col nav-component-container">
-                    <div class="nav-component" (click)="onClick('home')">
-                        <p class="nav-component-text">Home</p>
-                    </div>
-                    <div class="nav-component" (click)="onClick('about')">
-                        <p class="nav-component-text">About Me</p>
-                    </div>
-                    <div class="nav-component" (click)="onClick('projects')">
-                        <p class="nav-component-text">Projects</p>
-                    </div>
-                </div>
-            </div>
-        </mat-sidenav>
-        <div class="sidenav-content">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-container>
+    <top-bar></top-bar>
+    <div class="nav-content no-scroll-container">
+        <router-outlet></router-outlet>
+    </div>
 </div>
