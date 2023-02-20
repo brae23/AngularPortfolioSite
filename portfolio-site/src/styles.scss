@@ -50,6 +50,10 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     overflow: hidden;
 }
 
+.consolas {
+    font-family: "Consolas"
+}
+
 
 // Top Bar + Navigation
 
@@ -164,6 +168,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     font-size: 1.25rem;
     line-height: 1.5rem;
     font-weight: 200;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -181,6 +186,17 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
 .home-content {
     align-self: center;
     width: 70%;
+}
+
+.profile-img-container {
+    height: 20rem;
+}
+
+.profile-img {
+    height: 18rem;
+    border-radius: 50%;
+    border: 2px solid #1ac3da;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.55);
 }
 
 .home-title-box {
@@ -214,6 +230,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     display: flex;
     flex-direction: column;
     width: 100%;
+    animation: fadeIn 0.5s;
 }
 
 .about-content {
@@ -221,18 +238,6 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     font-size: 1.875rem;
     line-height: 2.25rem;
     font-weight: 700;
-}
-
-.profile-img-container {
-    height: 250px;
-}
-
-.profile-img {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: 2px solid #1ac3da;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.55);
 }
 
 
@@ -269,7 +274,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     width: 75%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 20px;
     overflow: auto;
     white-space: nowrap;
@@ -301,7 +306,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     background: $linear-gradient;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    height: 10rem;
+    height: 8rem;
     font-size: 2rem;
     line-height: 2.25rem;
     font-weight: 400;
@@ -316,18 +321,18 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     object-fit: cover;
     width: 10rem;
     height: 10rem;
+    margin-bottom: 2.5rem;
 }
 
 .project-card-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50%;
+    height: 60%;
 }
 
 .project-card-text {
     width: 80%;
-    padding-top: 50px;
     text-align: center;
     word-break: normal;
     white-space: normal;

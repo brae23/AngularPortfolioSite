@@ -1,7 +1,7 @@
 <div class="project-card" (click)="onClick()">
-    <div class="project-card-title">{{ title }}</div>
+    <div class="project-card-title consolas">{{ title }}</div>
     <img *ngIf="asset" src="{{assetSrc}}" class="project-card-img">
     <div class="project-card-content">
-        <p class="project-card-text">{{ content }}</p>
+        <div class="project-card-text consolas">{{ content }}</div>
     </div>
 </div>
