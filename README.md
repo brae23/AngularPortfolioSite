@@ -1,1 +1,4 @@
-This repository is going to be used for a personal Angular portfolio site
+# AngularPortfolioSite
+
+This repository houses my personal portfolio site, using the popular web-app framework Angular
+The project source files can be found in the portfolio-site/src directory
