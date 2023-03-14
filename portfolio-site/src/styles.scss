@@ -426,3 +426,19 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     line-height: 1.5rem;
     font-weight: 200;
 }
+
+
+// Contact Me Dialog
+
+.dialog-backdrop {
+    filter: brightness(50%);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.contact-me-dialog-box {
+    height: 500px;
+    width: 500px;
+    background: map.get(cp.$surface, 500);
+    border-radius: 15px;
+}
