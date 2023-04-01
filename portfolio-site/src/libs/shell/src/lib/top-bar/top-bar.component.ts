@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { ContactMeDialogComponent } from '../contact-me-dialog/contact-me-dialog.component';
 
 @Component({
   selector: 'top-bar',
@@ -8,16 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TopBarComponent implements OnInit {
   activatedRoute: string;
 
-  constructor(private router: Router) { 
+  constructor(public dialog: MatDialog, private router: Router) { 
     this.activatedRoute = router.url.toString().split('/')[1];
   }
 
   ngOnInit(): void {
   }
 
-  onClick(route: string) {
+  onNavClicked(route: string): void {
     this.router.navigateByUrl(`${route}`);
-    console.log(this.activatedRoute);
   }
 
+  onContactMeClicked(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.backdropClass = 'dialog-backdrop';
+
+    this.dialog.open(ContactMeDialogComponent, dialogConfig);
+  }
 }

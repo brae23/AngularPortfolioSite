@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { NavShellComponent } from './nav/nav-shell.component';
-import { MatListModule } from '@angular/material/list';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCardModule } from '@angular/material/card'
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { RouterModule } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from './project-card/project-card.component';
+import { ContactMeDialogComponent } from './contact-me-dialog/contact-me-dialog.component';
 
 type PathMatch = "full" | "prefix" | undefined;
 
@@ -29,12 +28,11 @@ const routes = [
     ProjectsComponent,
     TopBarComponent,
     ProjectCardComponent,
+    ContactMeDialogComponent,
   ],
   imports: [
-    MatSidenavModule,
-    MatListModule,
+    MatDialogModule,
     MatButtonModule,
-    MatCardModule,
     CommonModule,
     RouterModule.forChild(routes),
   ],

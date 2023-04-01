@@ -320,8 +320,8 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     border-radius: 15px;
 }
 
-.pgh-with-sara-img {
-    height: 400px;
+.me-hiking-img {
+    height: 500px;
     border: 2px solid #1ac3da;
     border-radius: 15px;
 }
@@ -425,4 +425,59 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     font-size: 1.25rem;
     line-height: 1.5rem;
     font-weight: 200;
+}
+
+
+// Contact Me Dialog
+
+.dialog-backdrop {
+    backdrop-filter: blur(15px) brightness(50%);
+}
+
+.contact-me-dialog-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+    width: auto;
+    background: map.get(cp.$surface, 500);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.55);
+}
+
+.contact-me-dialog-title {
+    margin-top: 20px;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    text-align: center;
+    width: auto;
+    text-align: center;
+    background: $linear-gradient;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    height: 4rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+}
+
+.contact-me-dialog-links-box {
+    margin-top: 5px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-me-dialog-logo {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.contact-me-dialog-close-btn {
+    margin-bottom: 20px;
 }
