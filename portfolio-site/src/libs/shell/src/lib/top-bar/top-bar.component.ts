@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ContactMeDialogComponent } from '../contact-me-dialog/contact-me-dialog.component';
 
 @Component({
@@ -23,12 +23,11 @@ export class TopBarComponent implements OnInit {
   }
 
   onContactMeClicked(): void {
-    let dialogRef = this.dialog.open(ContactMeDialogComponent, {
-      backdropClass: 'dialog-backdrop'
-    });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+    dialogConfig.backdropClass = 'dialog-backdrop';
 
-    dialogRef.afterClosed().subscribe(() => {
-      console.log("The Contact Me Dialog was closed");
-    })
+    this.dialog.open(ContactMeDialogComponent, dialogConfig);
   }
 }

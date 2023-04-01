@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { NavShellComponent } from './nav/nav-shell.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
