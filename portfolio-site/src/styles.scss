@@ -478,6 +478,11 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     cursor: pointer;
 }
 
+.contact-me-dialog-logo:hover {
+    border-radius: 15px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.55);
+}
+
 .contact-me-dialog-close-btn {
     margin-bottom: 20px;
 }
