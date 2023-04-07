@@ -469,6 +469,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 120px;
 }
 
 .contact-me-dialog-logo {
@@ -480,6 +481,7 @@ $linear-gradient: linear-gradient(to bottom right, #3B82F6, #6EE7B7);
 
 .contact-me-dialog-logo:hover {
     border-radius: 15px;
+    border: 2px solid white;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.55);
 }
 
