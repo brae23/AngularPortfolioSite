@@ -1,27 +1,37 @@
 ---
-interface Props {
-    selected: string;
-}
 ---
-<main>
-    <img class="profile-img" src="/Headshot2_cropped.webp">
+<div>
+    <img class="profile-img" src="/Headshot2_cropped_circle.webp">
     <h3>Brendan Rae</h3>
     <ul>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
+        <p class="navTag" id="/">home</p>
+        <p class="navTag" id="/about">about</p>
+        <p class="navTag" id="/blog">blog</p>
     </ul>
-</main>
+</div>
+
+<script>
+    import { navigate } from "astro:transitions/client";
+
+    const navTags = document.querySelectorAll('p.navTag');
+    navTags.forEach((navTag) => {
+        if (window.location.pathname == navTag.id) {
+            navTag.classList.add('text-gradient');
+        }
+        navTag.addEventListener('click', () => {
+            navigate(navTag.id);
+        })
+    })
+</script>
 
 <style>
-    main {
+    div {
         margin: auto;
 		padding: 1rem;
         display: flex;
         flex-direction: row;
-        color: white;
-        font-size: 18px;
+        color: var(--text-color);
+        font-size: 22px;
         font-weight: 500;
 		line-height: 1.6;
         align-items: center;
@@ -35,7 +45,7 @@ interface Props {
         width: 60px;
     }
     ul {
-        justify-self: end;
+        margin-left: auto;
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -43,5 +53,11 @@ interface Props {
     }
     p {
         padding: 1.5rem;
+        cursor: pointer;
+        background-size: 400%;
+    }
+    @keyframes underline-fade-in {
+        0% { width: 1rem; opacity: 0 }
+        100% { width: 4rem; opacity: 1 }
     }
 </style>

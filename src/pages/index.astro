@@ -1,12 +1,25 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import NavHeader from '../components/NavHeader.astro';
+import Card from '../components/Card.astro';
 ---
 
-<MainLayout title="Welcome to my website!">
-	<NavHeader selected="home"></NavHeader>
+<MainLayout title="Brendan Rae">
+	<NavHeader />
 	<main>
-		<h1>Hi, I'm <span class="text-gradient">Brendan Rae</span></h1>
+		<h1>Hi, I'm <span class="name text-gradient">Brendan Rae</span></h1>
+		<p class="bio">
+			I am a software engineer with a passion for creating innovative and 
+			efficient solutions to complex problems. Check out my blog or follow my socials
+			to see what I'm up to!
+		</p>
+		<div>
+			<Card
+				href='https://github.com/brae23'
+				title='Github'
+				body='My github profile'
+			/>
+		</div>
 	</main>
 </MainLayout>
 
@@ -14,22 +27,23 @@ import NavHeader from '../components/NavHeader.astro';
 	main {
 		margin: auto;
 		padding: 1rem;
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+		width:90%;
 	}
 	h1 {
-		font-size: 4rem;
+		font-size: 52px;
 		font-weight: 700;
 		line-height: 1;
-		text-align: center;
+		text-align: left;
 		margin-bottom: 1em;
+		padding: 2rem;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+	.name {
 		background-size: 400%;
-		background-position: 0%;
+	}
+	.bio {
+		padding: 2rem;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.6;
 	}
 </style>
