@@ -1,0 +1,47 @@
+---
+interface Props {
+    selected: string;
+}
+---
+<main>
+    <img class="profile-img" src="/Headshot2_cropped.webp">
+    <h3>Brendan Rae</h3>
+    <ul>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </ul>
+</main>
+
+<style>
+    main {
+        margin: auto;
+		padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+		line-height: 1.6;
+        align-items: center;
+    }
+    img {
+        margin: atuo;
+        justify-self: flex-start;
+        padding: 1rem;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+    }
+    ul {
+        justify-self: end;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+    p {
+        padding: 1.5rem;
+    }
+</style>
