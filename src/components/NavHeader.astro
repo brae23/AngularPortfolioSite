@@ -1,19 +1,25 @@
 ---
 ---
-<div>
+<div class="main-div">
     <img class="profile-img" src="/Headshot2_cropped_circle.webp">
     <h3>Brendan Rae</h3>
-    <ul>
-        <p class="navTag" id="/">home</p>
-        <p class="navTag" id="/about">about</p>
-        <p class="navTag" id="/blog">blog</p>
-    </ul>
+    <div class="desktop-nav">
+        <ul>
+            <p class="nav-tag" id="/">home</p>
+            <p class="nav-tag" id="/about">about</p>
+            <p class="nav-tag" id="/blog">blog</p>
+        </ul>
+    </div>
+    <i class="fa fa-bars mobile-nav-icon"></i>
+    <div class="mobile-nav-overlay">
+        <i class="fa fa-times mobile-nav-close-icon"></i>
+    </div>
 </div>
 
 <script>
     import { navigate } from "astro:transitions/client";
 
-    const navTags = document.querySelectorAll('p.navTag');
+    const navTags = document.querySelectorAll('p.nav-tag');
     navTags.forEach((navTag) => {
         if (window.location.pathname == navTag.id) {
             navTag.classList.add('text-gradient');
@@ -22,18 +28,24 @@
             navigate(navTag.id);
         })
     })
+
+    const hamburgerIcon = document.querySelector('i.mobile-nav-icon');
+    const mobileNavOverlay = document.querySelector('div.mobile-nav-overlay');
+    hamburgerIcon?.addEventListener('click', () => {
+        mobileNavOverlay?.classList.add('visible');
+    })
+    const mobileNavCloseIcon = document.querySelector('i.mobile-nav-close-icon');
+    mobileNavCloseIcon?.addEventListener('click', () => {
+        mobileNavOverlay?.classList.add('hidden');
+    })
 </script>
 
 <style>
-    div {
+    .main-div {
         margin: auto;
-		padding: 1rem;
+		padding: 1.5rem;
         display: flex;
         flex-direction: row;
-        color: var(--text-color);
-        font-size: 22px;
-        font-weight: 500;
-		line-height: 1.6;
         align-items: center;
     }
     img {
@@ -45,19 +57,59 @@
         width: 60px;
     }
     ul {
-        margin-left: auto;
         display: flex;
         flex-direction: row;
         align-content: center;
         justify-content: center;
+        color: var(--text-color);
+        font-size: 22px;
+        font-weight: 500;
+		line-height: 1.6;
     }
     p {
-        padding: 1.5rem;
         cursor: pointer;
+        margin: 22px 20px 20px 0;
         background-size: 400%;
     }
-    @keyframes underline-fade-in {
-        0% { width: 1rem; opacity: 0 }
-        100% { width: 4rem; opacity: 1 }
+    .visible: {
+        display: block;
+    }
+    .hidden {
+        dispaly: none;
+    }
+    .mobile-nav-close-icon {
+        cursor: pointer;
+        display: none;
+    }
+    .mobile-nav-overlay {
+        display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .desktop-nav {
+            display:none;
+        }
+        .mobile-nav-icon {
+            margin-left: auto;
+            margin-right: 2rem;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .mobile-nav-overlay {
+            z-index:100;
+            width:100;
+            height:300px;
+        }
+    }
+    @media only screen and (min-width: 701px) {
+        .desktop-nav {
+            margin-left:auto;
+        }
+        .mobile-nav-icon {
+            display:none;
+        }
+        .mobile-nav-overlay {
+            display: none;
+        }
     }
 </style>
