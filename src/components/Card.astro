@@ -67,9 +67,10 @@ const { href, title, body, img_src, img_alt } = Astro.props;
 		background-image: var(--accent-gradient);
 	}
 	img {
-		max-height: 100px;
-		max-width: 100px;
+		height: 100px;
+		width: 100px;
 		margin-bottom: 1.5rem;
+		border-radius: 8px;
 	}
 
 	@media (prefers-color-scheme: light) {
@@ -80,6 +81,9 @@ const { href, title, body, img_src, img_alt } = Astro.props;
 	@media (prefers-color-scheme: dark) {
 		.link-card:is(:hover, :focus-within) h2 {
 			color: rgb(var(--accent-light));
+		}
+		img {
+			filter: invert(100%) sepia(95%) saturate(2%) hue-rotate(272deg) brightness(107%) contrast(101%);
 		}
 	}
 </style>
