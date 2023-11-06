@@ -17,12 +17,14 @@ import Card from '../components/Card.astro';
 				title='Github'
 				body='My github profile. This is where I house all the code for my projects, personal website, and more!'
 				img_src='/github_logo.webp'
+				img_alt='Github Logo'
 			/>
 			<Card
 				href='https://www.linkedin.com/in/brendan-rae-3a3b03179/'
 				title='LinkedIn'
 				body='Connect with me on LinkedIn, where I keep up to date with my professional network'
 				img_src='/linkedin_logo.webp'
+				img_alt='LinkedIn Logo'
 			/>
 		</div>
 	</main>
@@ -63,6 +65,12 @@ import Card from '../components/Card.astro';
 	}
 
 	@media only screen and (max-width: 700px) {
+		main {
+			text-align: center;
+		}
+		h1 {
+			text-align: center;
+		}
         .card-container {
             flex-direction: column;
         }
