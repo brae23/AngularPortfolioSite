@@ -1,93 +1,98 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import Card from '../components/Card.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="Brendan Rae">
-	<main>
-		<h1>Hi, I'm <span class="name text-gradient">Brendan Rae</span></h1>
-		<p class="bio">
-			I am a software engineer with a passion for creating innovative and 
-			efficient solutions to complex problems. Check out my blog or follow my socials
-			to see what I'm up to!
-		</p>
-		<div class="card-container">
-			<Card
-				href='https://github.com/brae23'
-				title='Github'
-				body='My github profile. This is where I house all the code for my projects, personal website, and more!'
-				img_src='/github.svg'
-				img_alt='Github Logo'
-			/>
-			<Card
-				href='https://www.linkedin.com/in/brendan-rae-3a3b03179/'
-				title='LinkedIn'
-				body='Connect with me on LinkedIn, where I keep up to date with my professional network'
-				img_src='/linkedin.svg'
-				img_alt='LinkedIn Logo'
-			/>
-		</div>
-	</main>
+  <main>
+    <h1>Welcome to <span class="name text-gradient">my website!</span></h1>
+    <p class="bio">
+      I am a software engineer with a passion for creating innovative and
+      efficient solutions to complex problems. Check out my about page to learn
+      more about me. Also, feel free to check out my blog or follow my socials
+      to see what I'm up to!
+    </p>
+    <div class="card-container">
+      <Card
+        href="https://github.com/brae23"
+        title="Github"
+        body="My github profile. This is where I house all the code for my projects, personal website, and more!"
+        img_src="/github.svg"
+        img_alt="Github Logo"
+      />
+      <Card
+        href="https://www.linkedin.com/in/brendan-rae-3a3b03179/"
+        title="LinkedIn"
+        body="Connect with me on LinkedIn, where I keep up to date with my professional network"
+        img_src="/linkedin.svg"
+        img_alt="LinkedIn Logo"
+      />
+    </div>
+  </main>
 </MainLayout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width:90%;
-		position: relative;
-		z-index: 10;
-		animation: fadeInAnimation ease-in 0.4s;
-	}
-	h1 {
-		font-size: 52px;
-		font-weight: 700;
-		line-height: 1;
-		text-align: left;
-		margin-bottom: 1em;
-		padding: 2rem;
-	}
-	.name {
-		background-size: 400%;
-	}
-	.bio {
-		padding: 2rem;
-		font-size: 24px;
-		font-weight: 300;
-		line-height: 1.6;
-	}
-	.card-container {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-	}
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInAnimation ease-in 0.4s;
+  }
+  h1 {
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 1em;
+    padding: 2rem;
+  }
+  .name {
+    background-size: 400%;
+  }
+  .bio {
+    padding: 2rem;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 
-	@media only screen and (max-width: 700px) {
-		main {
-			text-align: center;
-		}
-		h1 {
-			font-size: 40px;
-			text-align: center;
-		}
-        .card-container {
-            flex-direction: column;
-        }
-		.bio {
-			font-size: 20px;
-			line-height: 1.6;
-			padding: 0;
-		}
+  @media only screen and (max-width: 700px) {
+    main {
+      text-align: center;
     }
-	@keyframes fadeInAnimation {
-		0% {
-			padding-top: 50px;
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
-		}
-	}
+    h1 {
+      font-size: 40px;
+      text-align: center;
+    }
+    .card-container {
+      flex-direction: column;
+    }
+    .bio {
+      font-size: 20px;
+      line-height: 1.6;
+      padding: 0;
+    }
+  }
+  @keyframes fadeInAnimation {
+    0% {
+      padding-top: 50px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>
