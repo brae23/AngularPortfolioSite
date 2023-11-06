@@ -1,0 +1,49 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Card from '../components/Card.astro';
+---
+
+<MainLayout title="Brendan Rae">
+	<main>
+		<h1>Hi, I'm <span class="name text-gradient">Brendan Rae</span></h1>
+		<p class="bio">
+			I am a software engineer with a passion for creating innovative and 
+			efficient solutions to complex problems. Check out my blog or follow my socials
+			to see what I'm up to!
+		</p>
+		<div>
+			<Card
+				href='https://github.com/brae23'
+				title='Github'
+				body='My github profile'
+			/>
+		</div>
+	</main>
+</MainLayout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width:90%;
+		position: relative;
+		z-index: 10;
+	}
+	h1 {
+		font-size: 52px;
+		font-weight: 700;
+		line-height: 1;
+		text-align: left;
+		margin-bottom: 1em;
+		padding: 2rem;
+	}
+	.name {
+		background-size: 400%;
+	}
+	.bio {
+		padding: 2rem;
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.6;
+	}
+</style>
