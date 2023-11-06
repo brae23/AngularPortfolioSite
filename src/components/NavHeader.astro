@@ -1,43 +1,28 @@
 ---
 ---
 <div class="main-div">
-    <img class="profile-img" src="/Headshot2_cropped_circle.webp">
+    <img class="profile-img" src="/headshot2_cropped_circle.webp">
     <h3>Brendan Rae</h3>
-    <div class="desktop-nav">
-        <ul>
-            <p class="nav-tag" id="/">home</p>
-            <p class="nav-tag" id="/about">about</p>
-            <p class="nav-tag" id="/blog">blog</p>
-        </ul>
-    </div>
-    <i class="fa fa-bars mobile-nav-icon"></i>
+    <nav class="desktop-nav">
+        <a href="/">home</a>
+        <a href="/about">about</a>
+        <a href="/blog">blog</a>
+    </nav>
+    <button class="hamburger">
+        <div class="bar"></div>
+    </button>
+
     <div class="mobile-nav-overlay">
-        <i class="fa fa-times mobile-nav-close-icon"></i>
     </div>
 </div>
 
 <script>
-    import { navigate } from "astro:transitions/client";
-
-    const navTags = document.querySelectorAll('p.nav-tag');
-    navTags.forEach((navTag) => {
-        if (window.location.pathname == navTag.id) {
-            navTag.classList.add('text-gradient');
-        }
-        navTag.addEventListener('click', () => {
-            navigate(navTag.id);
+    window.onload = () => {
+        const menu_btn = document.querySelector('.hamburger');
+        menu_btn?.addEventListener('click', () => {
+            menu_btn?.classList.toggle('is-active');
         })
-    })
-
-    const hamburgerIcon = document.querySelector('i.mobile-nav-icon');
-    const mobileNavOverlay = document.querySelector('div.mobile-nav-overlay');
-    hamburgerIcon?.addEventListener('click', () => {
-        mobileNavOverlay?.classList.add('visible');
-    })
-    const mobileNavCloseIcon = document.querySelector('i.mobile-nav-close-icon');
-    mobileNavCloseIcon?.addEventListener('click', () => {
-        mobileNavOverlay?.classList.add('hidden');
-    })
+    }
 </script>
 
 <style>
@@ -47,42 +32,60 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        height: 80px;
     }
     img {
-        margin: atuo;
         justify-self: flex-start;
         padding: 1rem;
         border-radius: 50%;
         height: 60px;
         width: 60px;
     }
-    ul {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        color: var(--text-color);
+    a {
         font-size: 22px;
-        font-weight: 500;
-		line-height: 1.6;
-    }
-    p {
         cursor: pointer;
         margin: 22px 20px 20px 0;
         background-size: 400%;
+        text-decoration: none;
+        color: var(--text-color);
     }
-    .visible: {
+    a:hover {
+        background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-position: 0%;
+        background-size: 400%;
+    }
+    .hamburger {
+        position: relative;
         display: block;
-    }
-    .hidden {
-        dispaly: none;
-    }
-    .mobile-nav-close-icon {
+        height: 35px;
+        width: 35px;
         cursor: pointer;
-        display: none;
+        margin-left: auto;
+
+        appearance: none;
+        background: none;
+        border: none;
+        outline: none;
     }
-    .mobile-nav-overlay {
-        display: none;
+    .hamburger .bar, .hamburger:after, .hamburger:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: var(--text-color);
+        margin: 6px; 0px;
+        transition:0.4s;
+    }
+    .hamburger.is-active:before {
+        transform: rotate(-45deg) translate(-8px, 6px);
+    }
+    .hamburger.is-active:after {
+        transform: rotate(45deg) translate(-9px, -8px);
+    }
+    .hamburger.is-active .bar {
+        opacity: 0;
     }
 
     @media only screen and (max-width: 700px) {
@@ -105,10 +108,7 @@
         .desktop-nav {
             margin-left:auto;
         }
-        .mobile-nav-icon {
-            display:none;
-        }
-        .mobile-nav-overlay {
+        .hamburger {
             display: none;
         }
     }

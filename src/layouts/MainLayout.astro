@@ -1,4 +1,5 @@
 ---
+import NavHeader from '../components/NavHeader.astro';
 interface Props {
 	title: string;
 }
@@ -13,14 +14,17 @@ const { title } = Astro.props;
 		<meta name="description" content="Brendan Rae's portfolio website" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	<header>
+		<NavHeader/>
+	</header>
 	<body>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 102, 159, 255;
