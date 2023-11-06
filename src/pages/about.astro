@@ -4,12 +4,112 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <MainLayout title="About me | Brendan  Rae">
 	<main>
-		<h1>About me page coming soon!</h1>
+		<div class="content-container">
+			<img src="/profile_picture.webp" alt="Brendan Rae profile picture" class="profile-img">
+			<div class="text-container">
+				<h1>Welcome to <span class="text-gradient">my website!</span></h1>
+				<p>
+					I'm a software engineer with over 2 years of professional experience and am passionate about 
+				 	innovating user experiences through the software I develop. I specialize in full stack development
+					and love all aspects of the development experience: design, end-to-end development, testing, and maintenance. 
+					I'm constantly focused on self-improvement, both in software development and my personal life.
+				</p>
+			</div>
+		</div>
+		<div class="content-container">
+			<div class="text-container">
+				<h1><span class="text-gradient">My life</span> outside of work</span></h1>
+				<p>
+					Outside of my professional career, I love to enjoy the outdoors. Being in nature is therapeutic for me,
+					and I love to hike and camp all over the country, especially in our great National Parks. Check out my blog
+					to see some of the adventures I've been on! I also love to play hockey and stay physically active as much
+					as possible.
+				</p>
+			</div>
+			<img src="/acadia_vista_1.webp" alt="Brendan Rae at Acadia National Park" class="acadia-vista-img">
+		</div>
 	</main>
 </MainLayout>
 
 <style>
-	h1 {
-		text-align: center;
+	main {
+		animation: fadeInAnimation ease-in 0.4s;
+		padding-top: 3rem;
+		padding-left: 5rem;
+		padding-right: 5rem;
+		margin: auto;
+		color: var(--text-color);
+	}
+	.content-container {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 4rem;
+		align-items: center;
+	}
+	.content-container > img {
+		border-radius: 8px;
+	}
+	.text-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.text-container > h1 {
+		font-size: 52px;
+		font-weight: 700;
+		line-height: 1;
+	}
+	.text-container > h1 > span {
+		background-size: 400%;
+	}
+	.text-container > p {
+		font-size: 24px;
+		font-weight: 300;
+		line-height: 1.6;
+	}
+	.profile-img {
+		max-height: 600px;
+		margin-right: 4rem;
+	}
+	.acadia-vista-img {
+		max-height: 500px;
+		margin-left: 4rem;
+	}
+
+	@keyframes fadeInAnimation {
+		0% {
+			padding-top: 80px;
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@media only screen and (max-width: 1000px) {
+		main {
+			text-align: center;
+			overflow-y: hidden;
+		}
+        .content-container {
+            flex-direction: column;
+			justify-content: center;
+			align-items: center;
+        }
+		.text-container {
+			align-items: center;
+		}
+		.profile-img {
+			margin-right: 0rem;
+		}
+		.acadia-vista-img {
+			min-width: 300px;
+			margin-left: 0rem;
+		}
+    }
+	@media (prefers-color-scheme: light) {
+		.content-container > img {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
 	}
 </style>
