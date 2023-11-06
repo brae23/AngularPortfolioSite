@@ -3,28 +3,32 @@ interface Props {
 	title: string;
 	body: string;
 	href: string;
+	img_src: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, img_src } = Astro.props;
 ---
 
 <li class="link-card">
 	<a href={href}>
+		<img src={img_src}>
 		<h2>
 			{title}
-			<span>&rarr;</span>
 		</h2>
 		<p>
 			{body}
 		</p>
 	</a>
 </li>
+
 <style>
 	.link-card {
 		list-style: none;
 		display: flex;
 		padding: 1px;
 		margin: 1rem;
+		width: 300px;
+		height: 400px;
 		background-color: #23262d;
 		background-image: none;
 		background-size: 400%;
@@ -42,6 +46,10 @@ const { href, title, body } = Astro.props;
 		color: white;
 		background-color: #23262d;
 		opacity: 0.8;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	h2 {
 		margin: 0;
@@ -49,8 +57,9 @@ const { href, title, body } = Astro.props;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+		margin-top: 1.5rem;
+		text-align: center;
+		font-size: 18px;
 	}
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
@@ -58,5 +67,10 @@ const { href, title, body } = Astro.props;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));
+	}
+	img {
+		max-height: 100px;
+		max-width: 100px;
+		margin-bottom: 1.5rem;
 	}
 </style>

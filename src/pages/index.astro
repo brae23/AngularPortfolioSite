@@ -11,11 +11,18 @@ import Card from '../components/Card.astro';
 			efficient solutions to complex problems. Check out my blog or follow my socials
 			to see what I'm up to!
 		</p>
-		<div>
+		<div class="card-container">
 			<Card
 				href='https://github.com/brae23'
 				title='Github'
-				body='My github profile'
+				body='My github profile. This is where I house all the code for my projects, personal website, and more!'
+				img_src='/github_logo.webp'
+			/>
+			<Card
+				href='https://www.linkedin.com/in/brendan-rae-3a3b03179/'
+				title='LinkedIn'
+				body='Connect with me on LinkedIn, where I keep up to date with my professional network'
+				img_src='/linkedin_logo.webp'
 			/>
 		</div>
 	</main>
@@ -28,6 +35,7 @@ import Card from '../components/Card.astro';
 		width:90%;
 		position: relative;
 		z-index: 10;
+		animation: fadeInAnimation ease-in 0.4s;
 	}
 	h1 {
 		font-size: 52px;
@@ -46,4 +54,17 @@ import Card from '../components/Card.astro';
 		font-weight: 300;
 		line-height: 1.6;
 	}
+	.card-container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@media only screen and (max-width: 700px) {
+        .card-container {
+            flex-direction: column;
+        }
+    }
 </style>
