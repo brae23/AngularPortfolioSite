@@ -90,6 +90,8 @@ import MainLayout from '../layouts/MainLayout.astro';
 		main {
 			text-align: center;
 			overflow-y: hidden;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
 		}
         .content-container {
             flex-direction: column;
@@ -99,12 +101,22 @@ import MainLayout from '../layouts/MainLayout.astro';
 		.text-container {
 			align-items: center;
 		}
+		.text-container > h1 {
+			font-size: 40px;
+		}
+		.text-container > p {
+			font-size: 20px;
+			line-height: 1.6;
+		}
 		.profile-img {
+			max-width: 300px;
 			margin-right: 0rem;
+			margin-bottom: 1rem;
 		}
 		.acadia-vista-img {
-			min-width: 300px;
+			max-width: 400px;
 			margin-left: 0rem;
+			margin-top: 1rem;
 		}
     }
 	@media (prefers-color-scheme: light) {

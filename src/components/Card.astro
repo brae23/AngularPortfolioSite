@@ -77,7 +77,7 @@ const { href, title, body, img_src, img_alt } = Astro.props;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		}
 	}
-	@media ((prefers-color-scheme: dark) {
+	@media (prefers-color-scheme: dark) {
 		.link-card:is(:hover, :focus-within) h2 {
 			color: rgb(var(--accent-light));
 		}
